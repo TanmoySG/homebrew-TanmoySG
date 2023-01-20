@@ -5,11 +5,11 @@
 class Mathctl < Formula
   desc ""
   homepage "https://github.com/TanmoySG/go-lib-cli-poc"
-  version "1.1.10"
+  version "1.1.13"
 
   on_macos do
-    url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.10/go-lib-cli-poc_1.1.10_darwin_all.tar.gz"
-    sha256 "f227cab87ce5b8fe21fa687aec96749637eba5dc52fa078c37a04a99e5c65995"
+    url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.13/go-lib-cli-poc_1.1.13_darwin_all.tar.gz"
+    sha256 "1b35a6678bf1b5f40fc87be5224c5008babc376cc9aade4b872a3dfc253e4213"
 
     def install
       bin.install "go-lib-cli-poc"
@@ -18,16 +18,16 @@ class Mathctl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.10/go-lib-cli-poc_1.1.10_linux_arm64.tar.gz"
-      sha256 "e2040bd3c03c35c61193e7184d687763b71371dba513292f669c56c3ec066c92"
+      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.13/go-lib-cli-poc_1.1.13_linux_arm64.tar.gz"
+      sha256 "41e25db1b13dadf3d92b09418473ead750bcfbdb099dd1e61735b58aff9cae89"
 
       def install
         bin.install "mathctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.10/go-lib-cli-poc_1.1.10_linux_amd64.tar.gz"
-      sha256 "46e829b247b539dfd70b973988a54dd570f8b2d967cd60fb62305ffa920e7519"
+      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.13/go-lib-cli-poc_1.1.13_linux_amd64.tar.gz"
+      sha256 "e5c601b60e84b43d3bc4232f3bd737228c8aa83f5e574ce48fc307f36bd066b8"
 
       def install
         bin.install "mathctl"
