@@ -5,11 +5,11 @@
 class GoLibCliPoc < Formula
   desc ""
   homepage "https://github.com/TanmoySG/go-lib-cli-poc"
-  version "1.1.11"
+  version "1.1.12"
 
   on_macos do
-    url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.11/go-lib-cli-poc_1.1.11_darwin_all.tar.gz"
-    sha256 "67d3392e067c35cd8b18ab95904e7e7a72a5f102f8f14c76aae4aa63228ee196"
+    url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.12/go-lib-cli-poc_1.1.12_darwin_all.tar.gz"
+    sha256 "ec077dd30d6df5a58cf4383f87ce8d064087dcb94faaea4c261be91af2118f79"
 
     def install
       bin.install "go-lib-cli-poc"
@@ -17,20 +17,20 @@ class GoLibCliPoc < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.11/go-lib-cli-poc_1.1.11_linux_amd64.tar.gz"
-      sha256 "4a3e43ec1fdd5c2ea634aa3f1a86d96b1c3099961e2264c873c0abd75267a4d7"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.12/go-lib-cli-poc_1.1.12_linux_arm64.tar.gz"
+      sha256 "1f1119adacd3cdc6260315d2effa9a0f746bf379327ddb841166cb12e508bd5e"
 
       def install
-        bin.install "go-lib-cli-poc"
+        bin.install "mathctl"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.11/go-lib-cli-poc_1.1.11_linux_arm64.tar.gz"
-      sha256 "0ad32659f4d3b5b83204e9d6ddc8078c21a989e8487f09070dbcde8e201f1f51"
+    if Hardware::CPU.intel?
+      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.12/go-lib-cli-poc_1.1.12_linux_amd64.tar.gz"
+      sha256 "cae557e1378cdfe1080a4aaf6096c31cc854c726adcfde8f73e53988815aa652"
 
       def install
-        bin.install "go-lib-cli-poc"
+        bin.install "mathctl"
       end
     end
   end
