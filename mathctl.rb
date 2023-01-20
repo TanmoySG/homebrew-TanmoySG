@@ -5,42 +5,32 @@
 class Mathctl < Formula
   desc ""
   homepage "https://github.com/TanmoySG/go-lib-cli-poc"
-  version "1.1.6"
+  version "1.1.10"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.6/go-lib-cli-poc_Darwin_arm64.tar.gz"
-      sha256 "02fff222e92f897d79adff21a1c03b19500cc96f76076013179d793f6e623e7f"
+    url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.10/go-lib-cli-poc_1.1.10_darwin_all.tar.gz"
+    sha256 "f227cab87ce5b8fe21fa687aec96749637eba5dc52fa078c37a04a99e5c65995"
 
-      def install
-        bin.install "go-lib-cli-poc"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.6/go-lib-cli-poc_Darwin_x86_64.tar.gz"
-      sha256 "60498fe3be4e2ba5ae90b2e6d68b88445c9919558749b4e2e3bb07f748e8bea4"
-
-      def install
-        bin.install "go-lib-cli-poc"
-      end
+    def install
+      bin.install "go-lib-cli-poc"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.6/go-lib-cli-poc_Linux_x86_64.tar.gz"
-      sha256 "f57316de238b8e6b71f31c16ff76644eb3eeb66ead3292b9ecd17f487b390a19"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.10/go-lib-cli-poc_1.1.10_linux_arm64.tar.gz"
+      sha256 "e2040bd3c03c35c61193e7184d687763b71371dba513292f669c56c3ec066c92"
 
       def install
-        bin.install "go-lib-cli-poc"
+        bin.install "mathctl"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.6/go-lib-cli-poc_Linux_arm64.tar.gz"
-      sha256 "6a9898fae3be1e35ac38e7fe4455647f96c14e63747f02d769a6dd31a9efe507"
+    if Hardware::CPU.intel?
+      url "https://github.com/TanmoySG/go-lib-cli-poc/releases/download/v1.1.10/go-lib-cli-poc_1.1.10_linux_amd64.tar.gz"
+      sha256 "46e829b247b539dfd70b973988a54dd570f8b2d967cd60fb62305ffa920e7519"
 
       def install
-        bin.install "go-lib-cli-poc"
+        bin.install "mathctl"
       end
     end
   end
