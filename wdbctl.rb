@@ -10,7 +10,7 @@ class Wdbctl < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/TanmoySG/wunderDB/releases/download/v2.0.0-beta/wdbctl_2.0.0-beta_darwin_arm64.tar.gz"
-      sha256 "c6ea3b5a3750f3399193ec640273a77a84d0fe3609f66b7aadb21d2f87ee3602"
+      sha256 "17d1f51c59da52296b3157761d2b3eadb2b538bd4332e7ec1f3a19fe3d382297"
 
       def install
         bin.install "wdbctl"
@@ -18,7 +18,7 @@ class Wdbctl < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/TanmoySG/wunderDB/releases/download/v2.0.0-beta/wdbctl_2.0.0-beta_darwin_amd64.tar.gz"
-      sha256 "80466da64830614624d250439a6497aa4cde56cdc17809c4c88f32898531ad38"
+      sha256 "b28c2f2209a4d251709aa4865bc16726d996ee6f8e447610115be43c08186daa"
 
       def install
         bin.install "wdbctl"
@@ -27,9 +27,17 @@ class Wdbctl < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/TanmoySG/wunderDB/releases/download/v2.0.0-beta/wdbctl_2.0.0-beta_linux_arm.tar.gz"
+      sha256 "f5be80ee792bb79dbaa9459ebf3b468b8b38bb7c233c610bc3ba08f1ce0837a6"
+
+      def install
+        bin.install "wdbctl"
+      end
+    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/TanmoySG/wunderDB/releases/download/v2.0.0-beta/wdbctl_2.0.0-beta_linux_arm64.tar.gz"
-      sha256 "07a85cfdc5203dc97ccccbdde6d01ee31487e5ff4ddd04a8a1bc195dbdda190b"
+      sha256 "272025f6b9bbe70b44d7c167ca6df4830bf6391ddfb6211e96e46ba704ca513e"
 
       def install
         bin.install "wdbctl"
@@ -37,15 +45,7 @@ class Wdbctl < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/TanmoySG/wunderDB/releases/download/v2.0.0-beta/wdbctl_2.0.0-beta_linux_amd64.tar.gz"
-      sha256 "cf7498d5e63dfb62b818207ecd33ed75d9dedd4c9f031aa8b9d4c9aeb8bcb2d5"
-
-      def install
-        bin.install "wdbctl"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/TanmoySG/wunderDB/releases/download/v2.0.0-beta/wdbctl_2.0.0-beta_linux_arm.tar.gz"
-      sha256 "cc6f48fd83e7bd9857d9a41fe4fe2db9fd28de6950183fd954619de845de0391"
+      sha256 "a875b678e99de394f20b95e83eb0b58cbb26e44f6b7e22d3d17b8c843471defe"
 
       def install
         bin.install "wdbctl"
