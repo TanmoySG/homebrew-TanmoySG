@@ -5,20 +5,20 @@
 class Wdbctl < Formula
   desc ""
   homepage "https://github.com/TanmoySG/wunderDB"
-  version "1.0.0-rc.2"
+  version "1.5"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/TanmoySG/wunderDB/releases/download/v1.0.0-rc.2/wdbctl_1.0.0-rc.2_darwin_amd64.tar.gz"
-      sha256 "e942a9251519d24cda0509cd379531c19dea1f8480096da6426270f472969e21"
+    if Hardware::CPU.arm?
+      url "https://github.com/TanmoySG/wunderDB/releases/download/v1.5/wdbctl_1.5_darwin_arm64.tar.gz"
+      sha256 "1ef6cf3b8513e411b03c3ddfcd65db77dac29eb2194685b5840bc994cf93eff5"
 
       def install
         bin.install "wdbctl"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/TanmoySG/wunderDB/releases/download/v1.0.0-rc.2/wdbctl_1.0.0-rc.2_darwin_arm64.tar.gz"
-      sha256 "b4845ea9adde1933b2d6d15d7a97a3681b32a6e1e76d98ddd45b4305ebfcca7a"
+    if Hardware::CPU.intel?
+      url "https://github.com/TanmoySG/wunderDB/releases/download/v1.5/wdbctl_1.5_darwin_amd64.tar.gz"
+      sha256 "68fce063605f22e4ea0a2fee9e5f1762509775a7f3575eac1728d41b89fd5224"
 
       def install
         bin.install "wdbctl"
@@ -27,25 +27,25 @@ class Wdbctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/TanmoySG/wunderDB/releases/download/v1.0.0-rc.2/wdbctl_1.0.0-rc.2_linux_amd64.tar.gz"
-      sha256 "ba96e40c37dca617e274aab1231ac0d3daee6e139e07591a179fa0699343c4f3"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/TanmoySG/wunderDB/releases/download/v1.5/wdbctl_1.5_linux_arm.tar.gz"
+      sha256 "f67390e1adf2bf03234caf002b742be2af2a7a8cf02a592603912cbcdf1220b5"
 
       def install
         bin.install "wdbctl"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/TanmoySG/wunderDB/releases/download/v1.0.0-rc.2/wdbctl_1.0.0-rc.2_linux_arm.tar.gz"
-      sha256 "06d99e812a788c2c6c4abe75a921fa0441a8052829cabdb1e40dd77c3c31873c"
+    if Hardware::CPU.intel?
+      url "https://github.com/TanmoySG/wunderDB/releases/download/v1.5/wdbctl_1.5_linux_amd64.tar.gz"
+      sha256 "84befd2be5023d5efd6f0a48e909227ef215eb7f89fd79cbeb89078885dca536"
 
       def install
         bin.install "wdbctl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TanmoySG/wunderDB/releases/download/v1.0.0-rc.2/wdbctl_1.0.0-rc.2_linux_arm64.tar.gz"
-      sha256 "b483c126fefdb21a586d9b1fde5b6953847e558af3d1ccd9d518c9d5a3771066"
+      url "https://github.com/TanmoySG/wunderDB/releases/download/v1.5/wdbctl_1.5_linux_arm64.tar.gz"
+      sha256 "dfbc903cfd4f4633f36a91824074f3ba79545ee640f874be9586ca94b1e0c9f2"
 
       def install
         bin.install "wdbctl"
